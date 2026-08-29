@@ -1,6 +1,17 @@
 # SUBMISSION - Exit Exam MVC 1/2569 (เสาร์บ่าย)
 
 ## 1. วิธีเปิดโปรแกรม
+npm install
+npx prisma db push
+node server.js
+ีurl: http://localhost:6767 (ไม่ได้สร้าง root)
+get method
+ีurl: http://localhost:6767/members
+url: http://localhost:6767/requests
+post method
+/requests/create
+/requests/vote 
+/requests/cancel
 - ภาษา/เฟรมเวิร์ก: Express.js, ejs
 - Entry point / คำสั่งเปิดโปรแกรม: 
 - หมายเหตุที่จำเป็น (ถ้ามี): 
