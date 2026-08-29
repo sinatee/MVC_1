@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model member {
+  id       String  @id
+  name     String
+  role     String
+  isActive Boolean @default(true)
+}
+
+model RoleChangeRequest {
+  id          String @id @default(uuid())
+  requesterId String
+  targetId    String
+  newRole     String
+  status      String
+}
+
+model Decision {
+  requestId String
+  memberId  String
+  result    String
+
+  @@id([requestId, memberId])
+}

@@ -1,0 +1,10 @@
+sequenceDiagram
+    actor M04 as M04
+    participant Controller as RequestController
+    participant DB as Database
+
+    M04->>Controller: โหวต APPROVE คำขอ C01
+    Controller->>DB: บันทึกผลโหวต
+    Controller->>DB: เปลี่ยนสถานะ C01 เป็น APPROVED
+    Controller->>DB: เปลี่ยนบทบาท M02 เป็น EDITOR
+    Controller-->>M04: ตอบกลับสำเร็จ (Redirect)

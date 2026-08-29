@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>รายชื่อสมาชิก</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    <div>
+    <h2>รายชื่อสมาชิก</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>ชื่อ</th>
+          <th>Role</th>
+          <th>สถานะ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% members.forEach(m => { %>
+          <tr>
+            <td><%= m.id %></td>
+            <td><%= m.name %></td>
+            <td><%= m.role %></td>
+            <td>
+              <span class="<%= m.isActive ? 'active' : 'inactive' %>">
+                <%= m.isActive ? 'Active' : 'Inactive' %>
+              </span>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

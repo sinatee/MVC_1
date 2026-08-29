@@ -1,0 +1,44 @@
+classDiagram
+    namespace Model {
+        class member {
+            +String id
+            +String name
+            +String role
+            +Boolean isActive
+        }
+        class role_change_requests {
+            +String id
+            +String requester_id
+            +String target_id
+            +String new_role
+            +String status
+        }
+        class decisions {
+            +String request_id
+            +String member_id
+            +String result
+        }
+    }
+
+    namespace Controller {
+        class MembersController {
+            +getMembers()
+        }
+        class RequestController {
+            +createRequest()
+            +vote()
+            +cancelRequest()
+        }
+    }
+
+    namespace View {
+        class Memberlist
+        class RequestView
+    }
+    
+    Memberlist --> MembersController
+    RequestView --> RequestController
+
+MembersController --> member
+    RequestController --> role_change_requests
+    RequestController --> decisions

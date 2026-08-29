@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>รายการคำขอเปลี่ยนบทบาท</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+  <h2>รายการคำขอเปลี่ยนบทบาททั้งหมด</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>รหัสคำขอ</th>
+        <th>ผู้เสนอ</th>
+        <th>สมาชิกเป้าหมาย</th>
+        <th>บทบาทใหม่</th>
+        <th>สถานะ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if (requests.length > 0) { %>
+        <% requests.forEach(r => { %>
+          <tr>
+            <td><strong><%= r.id %></strong></td>
+            <td><%= r.requesterId %></td>
+            <td><%= r.targetId %></td>
+            <td><%= r.newRole %></td>
+            <td><%= r.status %></td>
+          </tr>
+        <% }); %>
+      <% } else { %>
+        <tr>
+          <td colspan="6" style="text-align: center;">ยังไม่มีรายการคำขอ</td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</body>
+</html>
